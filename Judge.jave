@@ -1,6 +1,8 @@
 /*
 *　ジャンケンの審判を表すクラス
 */
+package junken.part;
+
 public class Judge{ 
 
     // ----------------------------------

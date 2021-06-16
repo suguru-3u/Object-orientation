@@ -2,6 +2,11 @@
 *   このファイルはじゃんけんゲームのプレイヤークラスのファイルです。
 */
 
+
+package junken.part;
+import java.lang.Math;
+
+
 public class Player{
 
     // じゃんけんの手を表す定数
