@@ -3,8 +3,7 @@
 */
 
 
-package junken.part;
-import java.lang.Math;
+package part;
 
 
 public class Player{
@@ -83,7 +82,7 @@ public class Player{
     *   自分の名前を答える
     *   @return 自分の名前
     */
-    public int getName(){
+    public String getName(){
         return this.name;
     }
 

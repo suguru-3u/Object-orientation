@@ -2,11 +2,11 @@
     プログラムのメイン処理　
     このアプリはじゃんけんアプリを通してオブジェクト思考を学ぶアプリです
 */
-package junken.main;
-import junken.part.*;
+import part.*;
+// import Judge.*;
 
 public class Main{
-    public void static main(String[] args){
+    public static void  main(String[] args){
 
         // 審判のインスタンスの作成
         Judge saito = new Judge();
@@ -18,6 +18,6 @@ public class Main{
         Player yamada = new Player("山田");
 
         // ジャンケンの開始
-        saito.judgeJanken(murata,yamada);
+        saito.startJabken(murata,yamada);
     }
 }
