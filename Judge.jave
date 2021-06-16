@@ -1,0 +1,35 @@
+/*
+*　ジャンケンの審判を表すクラス
+*/
+public class Judge{ 
+
+    // ----------------------------------
+    // プレイヤークラスの操作
+    // ----------------------------------
+
+    /*
+    *   ジャンケンを開始する
+    *   @param player1 判定対象プレイヤー1
+    *   @param player2 判定対象プレイヤー2
+    */
+
+    public void startJabken(Player player1,Player player2){
+
+        // ジャンケンの開始を宣言する
+        System.out.println("[ジャンケン開始]")；
+
+        // ジャンケンを３回行う
+        for(int cnt = 0; cnt < 3; cnt++){
+
+            // 何戦目か表示する
+            System.out.println("[" + (cnt + 1) + "回線目]")；
+
+            // プレイヤーの手を見てどちらが勝ちか判定する
+            Player winner = judgeJanken(player1,player2){
+                
+            }
+
+
+        }
+    }
+}
