@@ -28,7 +28,9 @@ public class Murata extends Player{
     public int showHand(){
 
         // 必ずグーを出す
-        return PAPER;
+        int hand = tactics.readTactics();
+
+        return hand;
     }
     
-}
+}   

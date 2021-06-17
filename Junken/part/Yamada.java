@@ -29,7 +29,9 @@ public class Yamada extends Player{
 
      
         // 必ずグーを出す
-        return STONE;
+        int hand = tactics.readTactics();
+
+        return hand;
     }
     
 }

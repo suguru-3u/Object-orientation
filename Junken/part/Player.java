@@ -23,6 +23,8 @@ public class Player{
     // プレイヤーの勝った回数
     private int winCount;
 
+    private Tactics tactics;
+
     // ----------------------------------
     // インスタンス生成時のコンストラクタ
     // ----------------------------------
@@ -40,6 +42,10 @@ public class Player{
     // ----------------------------------
     // プレイヤークラスの操作
     // ----------------------------------
+
+    void setTactics(Tactics tactics){
+        this.tactics = tactics;
+    }
 
     /*
     *   ジャンケンの手を出す
