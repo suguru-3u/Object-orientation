@@ -1,37 +1,37 @@
-/*
-*   このファイルはじゃんけんゲームのプレイヤークラスのファイルです。
-*/
+// /*
+// *   このファイルはじゃんけんゲームのプレイヤークラスのファイルです。
+// */
 
 
-package part;
+// package part;
 
 
-public class Yamada extends Player{
+// public class Yamada extends Player{
 
-    /*
-    *   プレイヤーコンストラクタ
-    *   @param name
-    */
+//     /*
+//     *   プレイヤーコンストラクタ
+//     *   @param name
+//     */
 
-    public Yamada(String name){
-        super(name);
-    }
+//     public Yamada(String name){
+//         super(name);
+//     }
 
-    // ----------------------------------
-    // プレイヤークラスの操作
-    // ----------------------------------
+//     // ----------------------------------
+//     // プレイヤークラスの操作
+//     // ----------------------------------
 
-    /*
-    *   ジャンケンの手を出す
-    *   @return ジャンケンの手
-    */
-    public int showHand(){
+//     /*
+//     *   ジャンケンの手を出す
+//     *   @return ジャンケンの手
+//     */
+//     public int showHand(){
 
      
-        // 必ずグーを出す
-        int hand = tactics.readTactics();
+//         // 必ずグーを出す
+//         int hand = tactics.readTactics();
 
-        return hand;
-    }
+//         return hand;
+//     }
     
-}
+// }

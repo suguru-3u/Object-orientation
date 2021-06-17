@@ -12,10 +12,18 @@ public class Main{
         Judge saito = new Judge();
 
         // プレイヤー1の生成
-        Player murata = new Murata("村田");
+        Player murata = new Player("村田");
+
+        Tactics muratatactics = new RandomTactics();
+
+        murata.setTactics(muratatactics);
 
         // プレイヤー2の生成
-        Player yamada = new Yamada("山田");
+        Player yamada = new Player("山田");
+
+        Tactics tactics = new StoneOnly();
+
+        yamada.setTactics(tactics);
 
         // ジャンケンの開始
         saito.startJabken(murata,yamada);
