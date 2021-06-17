@@ -12,10 +12,10 @@ public class Main{
         Judge saito = new Judge();
 
         // プレイヤー1の生成
-        Player murata = new Player("村田");
+        Player murata = new Murata("村田");
 
         // プレイヤー2の生成
-        Player yamada = new Player("山田");
+        Player yamada = new Yamada("山田");
 
         // ジャンケンの開始
         saito.startJabken(murata,yamada);
