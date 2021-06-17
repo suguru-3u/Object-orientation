@@ -13,7 +13,7 @@ public class Murata extends Player{
     *   @param name
     */
 
-    public Player(String name){
+    public Murata(String name){
         super(name);
     }
 
@@ -28,7 +28,7 @@ public class Murata extends Player{
     public int showHand(){
 
         // 必ずグーを出す
-        return STONE;
+        return PAPER;
     }
     
 }
