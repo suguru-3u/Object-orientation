@@ -1,3 +1,5 @@
+
+
 public class OldMaid{
     public static void main(String[] args){
 
@@ -42,6 +44,8 @@ public class OldMaid{
 
         // ジョーカーの作成
         trump.addCrad(new Card(0,Card.JOKER));
+
+        System.out.println(trump);
 
         return trump;
     }

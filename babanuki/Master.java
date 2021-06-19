@@ -9,15 +9,15 @@ public class Master{
 
         System.out.println("「カードを配ります」");
 
-        crads.shuffle();
+        cards.shuffle();
 
         int numberOfCards = cards.getNumberOfCards();
 
         int numberOfPlayers = players.size();
 
-        for(int index = 0; index < numberOfCards ; index){
+        for(int index = 0; index < numberOfCards ; index++){
 
-            Crad card = cards.pickedCard();
+            Card card = cards.pickCard();
 
 
             Player player = (Player)players.get(index % numberOfPlayers);
@@ -44,7 +44,7 @@ public class Master{
 
             // プレイヤーを指名する
             System.out.println(player + "さんの番です");
-            player.play(nextPlaye);
+            player.play(nextplayer);
              
         }
         System.out.println("「Gameを終了します」");
@@ -60,7 +60,7 @@ public class Master{
 
         // 残りプレイヤーがひとりになった場合は敗者を表示する
         if(players.size() == 1){
-            Player loser = (Player)player.get(0);
+            Player loser = (Player)players.get(0);
             System.out.println(loser + "さんの負けです");
 
         }

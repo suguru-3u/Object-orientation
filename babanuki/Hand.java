@@ -6,13 +6,13 @@ public class Hand{
     private ArrayList hand = new ArrayList();
 
     // カードを加える
-    public void addCrad(Crad card){
+    public void addCrad(Card card){
         hand.add(card);
     }
 
     // カードを引く
     public Card pickCard(){
-        Crad pickedCrad = (Crad)hand.remove(0);
+        Card pickedCrad = (Card)hand.remove(0);
 
         return pickedCrad;
     }
@@ -48,7 +48,7 @@ public class Hand{
     public Card[] findSameNumberCard(){
         
         int numberOfCards = hand.size();
-        Crad[] sameCards = null;
+        Card[] sameCards = null;
         
         // 手札にカードが一枚もない場合は何もしない
         if(numberOfCards > 0){
@@ -62,7 +62,7 @@ public class Hand{
 
             for(int index = 0 ; index < lastIndex ; index++){
                 Card card = (Card)hand.get(index);
-                if(card.getNumber() == lastAddedCardNum.getNumber()){
+                if(card.getNumber() == lastAddedCardNum){
 
                     // 最後に追加されたカードと同じカードが見つかった場合
                     // 見つかった組合せをsameCardsに格納し,ループを抜ける
