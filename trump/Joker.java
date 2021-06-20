@@ -8,4 +8,19 @@ public class Joker extends Card{
     }
 
     // 数を変更する
+    public void setSuit(int number){
+        this.number = number;
+    }
+
+     // スートを変更する
+    public void setSuit(int suit){
+        this.suit = suit;
+    }
+
+    // カードを文字列で表現する
+    public String toString(){
+        return "JK";
+    }
+
+
 }
