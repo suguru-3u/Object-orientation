@@ -18,6 +18,20 @@ public class Main{
 
         heros.stream().forEach(i -> System.out.println(i.getName()));
 
+        Map<Hero,Integer> heros2 = new HashMap<Hero,Integer>(){
+            {
+                put(saitou, 3);
+                put(suzuki, 7);
+            }
+        };
+
+        heros2.entrySet().stream().map(e -> e.getKey() + ": " + e.getValue()).forEach(System.out::println);
+        
+        
+        // .forEach(i -> System.out.println(i.getKey() ":" i.getValue()));
+
+
+
     }
 
     // public String fileString(String folder,String file){
