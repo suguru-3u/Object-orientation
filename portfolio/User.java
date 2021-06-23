@@ -13,7 +13,7 @@ public class User extends Human{
 
     // ユーザーがタスクを登録するメソッド
     public  List<Task> create(){
-        
+
     }
 
 
