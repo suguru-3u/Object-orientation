@@ -14,10 +14,11 @@ public class TaskMemo implements Memo{
         this.tasks.add(task);
     }
 
-    // Taskを表示させるメソッド
-    public List<Task> getTasks(int taskNumber){
+    // 特定のTaskを表示させるメソッド
+    public Task getTasks(int taskNumber){
         try{
-            return this.tasks.get(taskNumber)
+            Task task = this.tasks.get(taskNumber);
+            return task.toString();
         }catch(IndexOutOfBoundsException e){
             return System.out.println("指定された番号はございませんでした");
         }
@@ -28,7 +29,7 @@ public class TaskMemo implements Memo{
         return this.tasks.stream()
         .filter( -> tasks.getFinishFlg() = false)
         .map( -> "タイトル：　" + tasks.getTitle() + "詳細：　" + tasks.getMain())
-        .forEach(System.out::println)
+        .forEach(System.out::println);
     }
 
 }
