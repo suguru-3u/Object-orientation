@@ -2,6 +2,7 @@
 * Userが登録したTaskを表示させるクラス
 * Taskを表示させるmethodを記載
 */
+import java.util.ArrayList;
 
 public class TaskMemo implements Memo{
 
@@ -14,10 +15,15 @@ public class TaskMemo implements Memo{
     }
 
     // Taskを表示させるメソッド
-    public List<Task> getTasks(){
-        return this.tasks
+    public List<Task> getTasks(int taskNumber){
+        try{
+            return this.tasks.get(taskNumber)
+        }catch(IndexOutOfBoundsException e){
+            return System.out.println("指定された番号はございませんでした");
+        }
     }
 
+    // クラスの内容表示メソッド
     public String toString(){
         return this.tasks.stream()
         .filter( -> tasks.getFinishFlg() = false)
