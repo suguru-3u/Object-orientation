@@ -54,6 +54,19 @@ public class Main{
         // System.out.println("Start");
         // throw new IOException();
 
+        String str = "3plapkonknjkbhb";
+
+        try{
+            int num = Integer.parseInt(str);
+            System.out.println(num);
+        }catch(NumberFormatException e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }n
+
+        System.out.println("Start");
+        throw new IOException();
+
 
 
 
