@@ -1,7 +1,8 @@
 import java.util.*;
+import java.io.*;
 
 public class Main{
-    public static void main(String args[]){
+    public static void main(String args[]) throws IOException{
 
         // StringBuilder sb = new StringBuilder();
         // for(int count = 1; count < 101 ; count++){
@@ -54,46 +55,62 @@ public class Main{
         // System.out.println("Start");
         // throw new IOException();
 
-        String str = "3plapkonknjkbhb";
+        // String str = "3plapkonknjkbhb";
 
-        try{
-            int num = Integer.parseInt(str);
-            System.out.println(num);
-        }catch(NumberFormatException e){
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }n
+        // try{
+        //     int num = Integer.parseInt(str);
+        //     System.out.println(num);
+        // }catch(NumberFormatException e){
+        //     System.out.println(e.getMessage());
+        //     e.printStackTrace();
+        // }n
 
-        System.out.println("Start");
-        throw new IOException();
+        // System.out.println("Start");
+        // throw new IOException();
 
 
+        // FileWriter fw = new FileWriter("testtest",true);
+        // fw.write("a");
+        // fw.flush();
+        // fw.close();
+        // FileReader ff = null; 
+        // try{
+        //     ff = new FileReader("Hero.java");
+        //     System.out.println("データを読み込みます！");
+        //     int i = ff.read();
+        //     while(i != 1){
+        //         char c = (char)i;
+        //         System.out.println(c);
+        //         i = ff.read();
+        //     }
 
+        //     System.out.println("終了");
+        // }catch(IOException e){
+        //     System.out.println("エラー");
+        // }finally{
+        //     if(ff != null){
+        //         try{
+        //             ff.close();
+        //         }catch(IOException e2){}
+        //     }
+        // }
+
+        String ipt = args[0];
+        String opt = args[1];
+
+        FileInputStream fis = new FileInputStream(ipt);
+        FileOutputStream fos = new FileOutputStream(opt);
+
+        int i = fis.read();
+        while(i != -1){
+            fos.write(i);
+            i = fis.read();
+        }
+        fos.flush();
+        fis.close();
+        fos.close();
 
     }
-
-    // public String fileString(String folder,String file){
-    //     StringBuilder aaa = new StringBuilder();
-    //     if(folder.endsWith(String "¥")){
-    //         aaa.append(folder);
-    //         aaa.append(file);
-    //     }else{
-    //         aaa.append(folder);
-    //         aaa.append("¥");
-    //         aaa.append(file);
-    //     }
-    //     return aaa;
-    // }
-
-    // public Date aaa(){
-    //     Date now = new Date();
-    //     Calender c = Calender.getInstance();
-    //     c.getTime(now);
-    //     int  day = c.get(Calender.DAY_OF_MONTH);
-    //     c.set(day,day + 100);
-    //     Date g = c.getTime();
-    //     SimpleDateFormat f = new SimpleDateFormat("西暦 yyyy年mm月dd日");
-    // }
-
-
 }
+
+    
