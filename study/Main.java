@@ -113,17 +113,18 @@ public class Main{
         String ipt = args[0];
         String opt = args[1];
 
-        FileInputStream fis = new FileInputStream(ipt);
-        FileOutputStream fos = new FileOutputStream(opt);
+        // FileInputStream fis = new FileInputStream(ipt);
+        // FileOutputStream fos = new FileOutputStream(opt);
 
-        int i = fis.read();
-        while(i != -1){
-            fos.write(i);
-            i = fis.read();
-        }
-        fos.flush();
-        fis.close();
-        fos.close();
+        // int i = fis.read();
+        // while(i != -1){
+        //     fos.write(i);
+        //     i = fis.read();
+        // }
+        // fos.flush();
+        // fis.close();
+        // fos.close();
+        
 
     }
 }

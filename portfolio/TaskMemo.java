@@ -10,7 +10,7 @@ public class TaskMemo implements Memo{
     private List<Task> tasks = ArrayList<>();
 
     // Taskを格納するメソッド
-    public void setTasks(List<Task> task){
+    public void setTasks(Task task){
         this.tasks.add(task);
     }
 

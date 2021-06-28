@@ -29,7 +29,7 @@ public class Task{
 
     // FinishFlgフィールドへ代入
     public void setFinishFlg(){
-        this.finishFlg = True
+        this.finishFlg = True;
     }
 
     // Titleフィールドの呼び出し
@@ -51,10 +51,10 @@ public class Task{
     public String toString(){
         if(this.finishFlg){
             String finshTask = "このTaskは終了しています..  タイトル：　" + this.title + "詳細:　" + this.main;
-            return
+            return finshTask;
         }else{
             String noFinishTask = "タイトル：　" + this.title + "詳細:　" + this.main;
-            return noFinishTask
+            return noFinishTask;
         }
          
     }

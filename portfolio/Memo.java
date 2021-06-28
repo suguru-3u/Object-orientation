@@ -7,6 +7,6 @@
 public interface Memo{
 
     // 登録された内容を表示するmethod
-    public <T> T show(<T>T t);
+    public <T> T show(T t);
     
 }
