@@ -29,7 +29,7 @@ public class Task{
 
     // FinishFlgフィールドへ代入
     public void setFinishFlg(){
-        this.finishFlg = True;
+        this.finishFlg = true;
     }
 
     // Titleフィールドの呼び出し
@@ -43,7 +43,7 @@ public class Task{
     }
 
     // FinishFlgフィールドの呼び出し
-    public String getFinishFlg(){
+    public boolean getFinishFlg(){
         return this.finishFlg;
     }
 
