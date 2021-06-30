@@ -5,6 +5,7 @@
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class TaskMemo implements Memo{
 
@@ -21,12 +22,12 @@ public class TaskMemo implements Memo{
         return this.tasks;
     }
 
-    public void tasksShow(){
-        this.tasks.stream()
-        .filter(i -> i.getFinishFlg() == false)
-        .map(i -> "タイトル：　" + i.getTitle() + "詳細：　" + i.getMain())
-        .forEach(i -> System.out.println(i));
-    }
+    // public void tasksShow(){
+    //     this.tasks.stream()
+    //     .filter(i -> i.getFinishFlg() == false)
+    //     .map(i -> "タイトル：　" + i.getTitle() + "詳細：　" + i.getMain())
+    //     .forEach(i -> System.out.println(i));
+    // }
 
 
     // 特定のTaskを表示させるメソッド
@@ -41,12 +42,14 @@ public class TaskMemo implements Memo{
     }
 
     // クラスの内容表示メソッド
-    // public String toString(){
+    public String toString(){
 
-        // return this.tasks.stream()
-        // .filter(i -> i.getFinishFlg() == false)
-        // .map(i -> "タイトル：　" + i.getTitle() + "詳細：　" + i.getMain())
-        // .forEach(i -> System.out.println(i));
-    // }
+        String tasksString = this.tasks.stream()
+        .filter(i -> i.getFinishFlg() == false)
+        .map(i -> "　タイトル：　" + i.getTitle() + "　詳細：　" + i.getMain())
+        .collect(Collectors.joining(", "));
+
+        return tasksString;
+    }
 
 }

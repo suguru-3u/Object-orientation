@@ -54,8 +54,8 @@ public class Main{
             Task task = new Task(taskTitle,taskMain);
 
             taskMemo.setTasks(task);
-
-            taskMemo.tasksShow();
+            
+            System.out.println(taskMemo);
 
           } catch (Exception e) {
 
