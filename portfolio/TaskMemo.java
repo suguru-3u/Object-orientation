@@ -22,12 +22,14 @@ public class TaskMemo implements Memo{
         return this.tasks;
     }
 
-    // public void tasksShow(){
-    //     this.tasks.stream()
-    //     .filter(i -> i.getFinishFlg() == false)
-    //     .map(i -> "タイトル：　" + i.getTitle() + "詳細：　" + i.getMain())
-    //     .forEach(i -> System.out.println(i));
-    // }
+    public void tasksShow(){
+        System.out.println("");
+        this.tasks.stream()
+        .filter(i -> i.getFinishFlg() == false)
+        .map(i -> tasks.indexOf(i) + 1 + " タイトル：　" + i.getTitle() + "　詳細：　" + i.getMain())
+        .forEach(i -> System.out.println(i));
+        System.out.println("");
+    }
 
 
     // 特定のTaskを表示させるメソッド
