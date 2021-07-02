@@ -4,18 +4,35 @@ import java.util.InputMismatchException;
 
 
 public class Main{
-    public static void main(String[] args){
+  public static void main(String[] args){
 
-      TaskMemo taskMemo = new TaskMemo();
-      boolean app = true;
+    TaskMemo taskMemo = new TaskMemo();
+    boolean app = true;
 
+    try {
+      // キーボード入力を受け付ける
+      Scanner name = new Scanner(System.in);
+      System.out.print("お名前を入力してください:");
+      String yoursName = name.nextLine();
+
+      System.out.println("こんにちは、" + yoursName + "さん");
+
+    } catch (InputMismatchException e) {
+
+      System.out.println(e.getMessage());
+
+    }
+
+    while(app){
+
+      System.out.print("Taskを入力する場合は「1」、Taskを削除する場合は「２」を入力してください　：");
+
+      Scanner yourselect = null;
+      String yoursTask = null;
       try {
         // キーボード入力を受け付ける
-        Scanner name = new Scanner(System.in);
-        System.out.print("お名前を入力してください:");
-        String yoursName = name.nextLine();
-
-        System.out.println("こんにちは、" + yoursName + "さん");
+        yourselect = new Scanner(System.in);
+        yoursTask = yourselect.nextLine();
 
       } catch (InputMismatchException e) {
 
@@ -23,60 +40,70 @@ public class Main{
 
       }
 
-      while(app){
+      switch(yoursTask){
 
-        System.out.print("Taskを入力する場合は「1」を入力してください：");
+        case "１":
+          System.out.println("登録したいTaskを入力してください");
+            try {
+            // キーボード入力を受け付ける
+            Scanner title = new Scanner(System.in);
+            System.out.print("TaskのTitleを入力してください：　");
+            String taskTitle = title.nextLine();
 
-        Scanner yourselect = null;
-        String yoursTask = null;
-        try {
-          // キーボード入力を受け付ける
-          yourselect = new Scanner(System.in);
-          yoursTask = yourselect.nextLine();
+            // キーボード入力を受け付ける
+            Scanner main = new Scanner(System.in);
+            System.out.print("TaskのMainを入力してください ：　");
+            String taskMain = main.nextLine();
 
-        } catch (InputMismatchException e) {
+            Task task = new Task(taskTitle,taskMain);
 
-          System.out.println(e.getMessage());
+            taskMemo.setTasks(task);
 
-        }
+            taskMemo.tasksShow();
+            
+            // System.out.println(taskMemo);
 
-        switch(yoursTask){
+          } catch (Exception e) {
 
-          case "１":
-            System.out.println("登録したいTaskを入力してください");
-              try {
-              // キーボード入力を受け付ける
-              Scanner title = new Scanner(System.in);
-              System.out.print("TaskのTitleを入力してください：　");
-              String taskTitle = title.nextLine();
+            System.out.println(e.getMessage());
 
-              // キーボード入力を受け付ける
-              Scanner main = new Scanner(System.in);
-              System.out.print("TaskのMainを入力してください ：　");
-              String taskMain = main.nextLine();
+          }
+          break;
 
-              Task task = new Task(taskTitle,taskMain);
+        case "２":
+          System.out.print("削除したいTaskの番号を入力してください：　");
+          int taskNumber;
 
-              taskMemo.setTasks(task);
+          try {
+            // キーボード入力を受け付ける
+            Scanner title = new Scanner(System.in);
+            taskNumber = title.nextInt();
+            taskNumber += 1 ;
 
-              taskMemo.tasksShow();
-              
-              // System.out.println(taskMemo);
+            System.out.print(taskMemo.getTasks(taskNumber));
+            System.out.print("こちらのTaskのお間違い無いでしょうか？ 間違いなければ「y」を入力してください：　");
 
-            } catch (Exception e) {
+            Scanner taskJuge = new Scanner(System.in);
+            String taskJugeAnwser = taskJuge.nextLine();
 
-              System.out.println(e.getMessage());
+            if(taskJugeAnwser.equals("y")){
+              System.out.println("では削除処理を実行します");
 
             }
-            break;
 
-          default:
-            app = false;
-            break;
-        }
+
+
+          } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+          }
+          break;
+
+        default:
+          app = false;
+          break;
       }
-
-   
-    
     }
+  }
 }
