@@ -31,25 +31,26 @@ public class Main{
 
       taskMemo.tasksShow();
 
-      System.out.print("Taskを入力する場合は「1」、Taskを削除する場合は「２」Taskを編集する場合は「３」を入力してください　：");
+      System.out.print("Taskを入力する場合は「1」、Taskを削除する場合は「２」、Taskを編集する場合は「３」、終了する場合は「５」を入力してください　：");
+      System.out.print("");
 
       Scanner yourselect = null;
-      String yoursTask = null;
+      int yoursTask = 0 ;
+
       try {
         // キーボード入力を受け付ける
         yourselect = new Scanner(System.in);
-        yoursTask = yourselect.nextLine();
+        yoursTask = yourselect.nextInt();
 
       } catch (InputMismatchException e) {
-
+        System.out.println("入力エラーを検知しました");
         System.out.println(e.getMessage());
-
       }
 
       switch(yoursTask){
 
         // Task登録処理
-        case "１":
+        case 1 :
           System.out.println("登録したいTaskを入力してください");
             try {
             // キーボード入力を受け付ける
@@ -74,7 +75,7 @@ public class Main{
           break;
 
         // Task削除処理
-        case "２":
+        case 2 :
           System.out.print("削除したいTaskの番号を入力してください：　");
           int taskNumber;
 
@@ -98,7 +99,7 @@ public class Main{
           }
           break;
 
-          case "３":
+          case 3 :
           System.out.print("編集したいTaskの番号を入力してください：　");
           int taskCahngeNumber;
 
@@ -136,8 +137,12 @@ public class Main{
           }
           break;
 
-        default:
+        case 5 :
           app = false;
+          break;
+
+        default:
+          System.out.print("正しく入力してください");
           break;
       }
     }
