@@ -25,7 +25,10 @@ public class Main{
 
     while(app){
 
-      System.out.print("抱えているTask一覧");
+      System.out.println("");
+      System.out.println("抱えているTask一覧");
+      System.out.println("Task数 ： " + taskMemo.getTasksNumbers() + "個です。");
+
       taskMemo.tasksShow();
 
       System.out.print("Taskを入力する場合は「1」、Taskを削除する場合は「２」を入力してください　：");

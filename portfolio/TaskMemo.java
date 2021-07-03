@@ -17,6 +17,10 @@ public class TaskMemo implements Memo{
         this.tasks.add(task);
     }
 
+    public int getTasksNumbers(){
+        return tasks.size();
+    }
+
     // Taskを格納するメソッド
     public List<Task> getTasks(){
         return this.tasks;
