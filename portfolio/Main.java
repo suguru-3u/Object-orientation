@@ -25,7 +25,8 @@ public class Main{
 
     while(app){
 
-      System.out.print("抱えているTask一覧")
+      System.out.print("抱えているTask一覧");
+      taskMemo.tasksShow();
 
       System.out.print("Taskを入力する場合は「1」、Taskを削除する場合は「２」を入力してください　：");
 
@@ -61,10 +62,6 @@ public class Main{
             Task task = new Task(taskTitle,taskMain);
 
             taskMemo.setTasks(task);
-
-            taskMemo.tasksShow();
-            
-            // System.out.println(taskMemo);
 
           } catch (Exception e) {
 

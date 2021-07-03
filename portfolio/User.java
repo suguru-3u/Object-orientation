@@ -20,7 +20,7 @@ public class User extends Human{
     }
 
     // ユーザーが登録したタスクを削除するメソッド
-    public List<Task> delete(List<Task> task){
+    // public List<Task> delete(List<Task> task){
         
-    }
+    // }
 }

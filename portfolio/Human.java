@@ -5,11 +5,15 @@
 abstract class Human{
     private String name;
 
-    // Taskを生成
-    abstract public <T> T create();
+     public Human(String name){
+        this.name = name;
+    }
+
+    // // Taskを生成
+    // abstract public <T> T create();
 
     // タスクを削除
-    abstract public <T> T delete(T t);
+    // abstract public <T> T delete(T t);
 
 
     public String getName(){

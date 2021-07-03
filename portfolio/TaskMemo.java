@@ -25,7 +25,7 @@ public class TaskMemo implements Memo{
     public void tasksShow(){
         if(tasks.isEmpty()){
             System.out.println("");
-            System.out.println("現在抱えているTaskはありません")
+            System.out.println("現在抱えているTaskはありません");
             System.out.println("");
         }else{
             System.out.println("");
