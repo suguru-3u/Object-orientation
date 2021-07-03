@@ -8,12 +8,11 @@ abstract class Human{
     public Human(){
     }
 
-    // Taskを生成
+    // TaskMemoクラスにTaskインスタンスを生成
     abstract public void memoContentCreate();
 
-    // タスクを削除
-    // abstract public <T> T delete(T t);
-
+    // TaskMemoクラスのTaskインスタンスを削除
+    abstract public void memoContentDelete();
 
     // 名前をインスタンス変数に格納
     public void setName(String name){

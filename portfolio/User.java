@@ -49,7 +49,27 @@ public class User extends Human{
     }
 
     // ユーザーが登録したタスクを削除するメソッド
-    // public List<Task> delete(List<Task> task){
-        
-    // }
+    public void memoContentDelete(){
+
+        System.out.print("削除したいTaskの番号を入力してください：　");
+        int taskNumber;
+
+        try {
+        // キーボード入力を受け付ける
+        Scanner title = new Scanner(System.in);
+        taskNumber = title.nextInt();
+        taskNumber -= 1 ;
+        System.out.println(taskMemo.getTasks(taskNumber));
+        System.out.print("こちらのTaskでお間違い無いでしょうか？ 間違いなければ「y」を入力してください：　");
+
+        Scanner taskJuge = new Scanner(System.in);
+        String taskJugeAnwser = taskJuge.nextLine();
+
+        if(taskJugeAnwser.equals("y")){
+            this.taskMemo.deleteTask(taskNumber);
+        }
+        } catch (Exception e) {
+        System.out.println(e.getMessage());
+        }
+    }
 }
