@@ -21,6 +21,12 @@ public class TaskMemo implements Memo{
         return tasks.size();
     }
 
+    public void changeTask(int taskNumber ,Task task){
+        System.out.print("Taskの内容の変更を開始します");
+        this.tasks.set(taskNumber,task);
+        System.out.print("Taskの内容の変更が終了しました");
+    }
+
     // Taskを格納するメソッド
     public List<Task> getTasks(){
         return this.tasks;

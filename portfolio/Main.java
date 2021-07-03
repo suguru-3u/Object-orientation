@@ -31,7 +31,7 @@ public class Main{
 
       taskMemo.tasksShow();
 
-      System.out.print("Taskを入力する場合は「1」、Taskを削除する場合は「２」を入力してください　：");
+      System.out.print("Taskを入力する場合は「1」、Taskを削除する場合は「２」Taskを編集する場合は「３」を入力してください　：");
 
       Scanner yourselect = null;
       String yoursTask = null;
@@ -85,7 +85,7 @@ public class Main{
             taskNumber -= 1 ;
 
             System.out.println(taskMemo.getTasks(taskNumber));
-            System.out.print("こちらのTaskのお間違い無いでしょうか？ 間違いなければ「y」を入力してください：　");
+            System.out.print("こちらのTaskでお間違い無いでしょうか？ 間違いなければ「y」を入力してください：　");
 
             Scanner taskJuge = new Scanner(System.in);
             String taskJugeAnwser = taskJuge.nextLine();
@@ -93,6 +93,44 @@ public class Main{
             if(taskJugeAnwser.equals("y")){
               taskMemo.deleteTask(taskNumber);
             }
+          } catch (Exception e) {
+            System.out.println(e.getMessage());
+          }
+          break;
+
+          case "３":
+          System.out.print("編集したいTaskの番号を入力してください：　");
+          int taskCahngeNumber;
+
+          try {
+            // キーボード入力を受け付ける
+            Scanner title = new Scanner(System.in);
+            taskCahngeNumber = title.nextInt();
+            taskCahngeNumber -= 1 ;
+
+            System.out.println(taskMemo.getTasks(taskCahngeNumber));
+            System.out.print("こちらのTaskでお間違い無いでしょうか？ 間違いなければ「y」を入力してください：　");
+
+            Scanner taskJuge = new Scanner(System.in);
+            String taskJugeAnwser = taskJuge.nextLine();
+
+            if(taskJugeAnwser.equals("y")){
+
+              Scanner titleChange = new Scanner(System.in);
+              System.out.print("TaskのTitleを入力してください：　");
+              String taskTitleChange = titleChange.nextLine();
+
+              // キーボード入力を受け付ける
+              Scanner mainChange = new Scanner(System.in);
+              System.out.print("TaskのMainを入力してください ：　");
+              String taskMainChange = mainChange.nextLine();
+
+              Task taskChange = new Task(taskTitleChange,taskMainChange);
+
+              taskMemo.changeTask(taskCahngeNumber,taskChange);
+
+                
+              }
           } catch (Exception e) {
             System.out.println(e.getMessage());
           }

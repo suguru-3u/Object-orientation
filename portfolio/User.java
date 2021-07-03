@@ -12,12 +12,12 @@ public class User extends Human{
     }
 
     // ユーザーがタスクを登録するメソッド
-    public Task create(String title,String main){
-        System.out.println("Task登録開始します");
-        Task taskCreaet = new Task(title,main);
-        System.out.println("Task登録完了しました");
-        return taskCreaet;
-    }
+    // public Task create(String title,String main){
+    //     System.out.println("Task登録開始します");
+    //     Task taskCreaet = new Task(title,main);
+    //     System.out.println("Task登録完了しました");
+    //     return taskCreaet;
+    // }
 
     // ユーザーが登録したタスクを削除するメソッド
     // public List<Task> delete(List<Task> task){
