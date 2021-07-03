@@ -23,12 +23,18 @@ public class TaskMemo implements Memo{
     }
 
     public void tasksShow(){
-        System.out.println("");
-        this.tasks.stream()
-        .filter(i -> i.getFinishFlg() == false)
-        .map(i -> tasks.indexOf(i) + 1 + " タイトル：　" + i.getTitle() + "　詳細：　" + i.getMain())
-        .forEach(i -> System.out.println(i));
-        System.out.println("");
+        if(tasks.isEmpty()){
+            System.out.println("");
+            System.out.println("現在抱えているTaskはありません")
+            System.out.println("");
+        }else{
+            System.out.println("");
+            this.tasks.stream()
+            .filter(i -> i.getFinishFlg() == false)
+            .map(i -> tasks.indexOf(i) + 1 + " タイトル：　" + i.getTitle() + "　詳細：　" + i.getMain())
+            .forEach(i -> System.out.println(i));
+            System.out.println("");
+        }
     }
 
 
@@ -42,6 +48,17 @@ public class TaskMemo implements Memo{
             return message;
         }
     }
+
+    // 特定の要素を削除する 
+    public void deleteTask(int taskNumber){
+        System.out.println("削除処理を実行します");
+        try{
+            this.tasks.remove(taskNumber);
+            System.out.println("削除に成功しました");
+        }catch(IndexOutOfBoundsException e){
+            System.out.println("削除に失敗しました");
+        }
+    } 
 
     // クラスの内容表示メソッド
     public String toString(){

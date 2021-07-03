@@ -25,6 +25,8 @@ public class Main{
 
     while(app){
 
+      System.out.print("抱えているTask一覧")
+
       System.out.print("Taskを入力する場合は「1」、Taskを削除する場合は「２」を入力してください　：");
 
       Scanner yourselect = null;
@@ -42,6 +44,7 @@ public class Main{
 
       switch(yoursTask){
 
+        // Task登録処理
         case "１":
           System.out.println("登録したいTaskを入力してください");
             try {
@@ -70,6 +73,7 @@ public class Main{
           }
           break;
 
+        // Task削除処理
         case "２":
           System.out.print("削除したいTaskの番号を入力してください：　");
           int taskNumber;
@@ -78,25 +82,19 @@ public class Main{
             // キーボード入力を受け付ける
             Scanner title = new Scanner(System.in);
             taskNumber = title.nextInt();
-            taskNumber += 1 ;
+            taskNumber -= 1 ;
 
-            System.out.print(taskMemo.getTasks(taskNumber));
+            System.out.println(taskMemo.getTasks(taskNumber));
             System.out.print("こちらのTaskのお間違い無いでしょうか？ 間違いなければ「y」を入力してください：　");
 
             Scanner taskJuge = new Scanner(System.in);
             String taskJugeAnwser = taskJuge.nextLine();
 
             if(taskJugeAnwser.equals("y")){
-              System.out.println("では削除処理を実行します");
-
+              taskMemo.deleteTask(taskNumber);
             }
-
-
-
           } catch (Exception e) {
-
             System.out.println(e.getMessage());
-
           }
           break;
 
