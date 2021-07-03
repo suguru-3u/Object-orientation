@@ -17,6 +17,10 @@ public class TaskMemo implements Memo{
         this.tasks.add(task);
     }
 
+    public List<Task> getTasks(){
+        return this.tasks;
+    }
+    
     public int getTasksNumbers(){
         return tasks.size();
     }
@@ -27,10 +31,7 @@ public class TaskMemo implements Memo{
         System.out.print("Taskの内容の変更が終了しました");
     }
 
-    // Taskを格納するメソッド
-    public List<Task> getTasks(){
-        return this.tasks;
-    }
+    // Taskを変換するメソッド
 
     public void tasksShow(){
         if(tasks.isEmpty()){
@@ -41,7 +42,7 @@ public class TaskMemo implements Memo{
             System.out.println("");
             this.tasks.stream()
             .filter(i -> i.getFinishFlg() == false)
-            .map(i -> tasks.indexOf(i) + 1 + " タイトル：　" + i.getTitle() + "　詳細：　" + i.getMain())
+            .map(i -> "■ " + (tasks.indexOf(i) + 1) + "\nタイトル：　" + i.getTitle() + "\n詳細    ：  " + i.getMain())
             .forEach(i -> System.out.println(i));
             System.out.println("");
         }

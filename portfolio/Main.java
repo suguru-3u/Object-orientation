@@ -6,16 +6,22 @@ import java.util.InputMismatchException;
 public class Main{
   public static void main(String[] args){
 
+    // インスタンス変数生成
     TaskMemo taskMemo = new TaskMemo();
     boolean app = true;
+    User user = new User();
 
+    // ユーザー情報入力
     try {
       // キーボード入力を受け付ける
-      Scanner name = new Scanner(System.in);
       System.out.print("お名前を入力してください:");
+      Scanner name = new Scanner(System.in);
       String yoursName = name.nextLine();
 
-      System.out.println("こんにちは、" + yoursName + "さん");
+      user.setName(yoursName);
+      user.setTaskMemo(taskMemo);
+
+      System.out.println("こんにちは、" + user.getName() + "さん");
 
     } catch (InputMismatchException e) {
 
@@ -23,11 +29,14 @@ public class Main{
 
     }
 
+    // Taskメイン機能
     while(app){
 
       System.out.println("");
-      System.out.println("抱えているTask一覧");
-      System.out.println("Task数 ： " + taskMemo.getTasksNumbers() + "個です。");
+      System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+      System.out.println("■　抱えているTask一覧　　　■");
+      System.out.println("■　Task数 ： " + taskMemo.getTasksNumbers() + "個 　　 　　 ■");
+      System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 
       taskMemo.tasksShow();
 
@@ -51,27 +60,32 @@ public class Main{
 
         // Task登録処理
         case 1 :
-          System.out.println("登録したいTaskを入力してください");
-            try {
-            // キーボード入力を受け付ける
-            Scanner title = new Scanner(System.in);
-            System.out.print("TaskのTitleを入力してください：　");
-            String taskTitle = title.nextLine();
+          user.memoContentCreate();
 
-            // キーボード入力を受け付ける
-            Scanner main = new Scanner(System.in);
-            System.out.print("TaskのMainを入力してください ：　");
-            String taskMain = main.nextLine();
 
-            Task task = new Task(taskTitle,taskMain);
+          // System.out.println("登録したいTaskを入力してください");
+          //   try {
+          //   // キーボード入力を受け付ける
+          //   Scanner title = new Scanner(System.in);
+          //   System.out.print("TaskのTitleを入力してください：　");
+          //   String taskTitle = title.nextLine();
 
-            taskMemo.setTasks(task);
+          //   // キーボード入力を受け付ける
+          //   Scanner main = new Scanner(System.in);
+          //   System.out.print("TaskのMainを入力してください ：　");
+          //   String taskMain = main.nextLine();
 
-          } catch (Exception e) {
+          //   Task task = new Task(taskTitle,taskMain);
 
-            System.out.println(e.getMessage());
+          //   taskMemo.setTasks(task);
 
-          }
+          // } catch (Exception e) {
+
+          //   System.out.println(e.getMessage());
+
+          // }
+
+
           break;
 
         // Task削除処理
