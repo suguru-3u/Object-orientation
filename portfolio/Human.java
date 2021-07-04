@@ -14,6 +14,9 @@ abstract class Human{
     // TaskMemoクラスのTaskインスタンスを削除
     abstract public void memoContentDelete();
 
+    // TaskMemoクラスのTaskインスタンスの内容変更
+    abstract public void memoContentEdit();
+
     // 名前をインスタンス変数に格納
     public void setName(String name){
         this.name = name;
