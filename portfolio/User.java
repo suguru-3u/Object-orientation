@@ -25,26 +25,14 @@ public class User extends Human{
     // ユーザーがTaskを登録するメソッド
     public void memoContentCreate(){
         System.out.println("登録したいTaskを入力してください");
-        try {
-        // キーボード入力を受け付ける
-        Scanner title = new Scanner(System.in);
-        System.out.print("TaskのTitleを入力してください：　");
-        String taskTitle = title.nextLine();
 
-        // キーボード入力を受け付ける
-        Scanner main = new Scanner(System.in);
-        System.out.print("TaskのMainを入力してください ：　");
-        String taskMain = main.nextLine();
+        String taskTitle = KeyBord.inputKeyBordTitle();
+
+        String taskMain = KeyBord.inputKeyBordMain();
 
         Task task = new Task(taskTitle,taskMain);
 
         this.taskMemo.setTasks(task);
-
-        } catch (Exception e) {
-
-        System.out.println(e.getMessage());
-
-        }
         
     }
 
@@ -57,37 +45,23 @@ public class User extends Human{
         if(taskSerchCheack >= 0){
             this.taskMemo.deleteTask(taskSerchCheack);
         }
-
-        // } catch (Exception e) {
-        // System.out.println(e.getMessage());
-        // }
-
     }
 
     // ユーザーが登録したTaskの内容を変更するメソッド
     public void memoContentEdit(){
+        
         System.out.print("編集したいTaskの番号を入力してください：　");
-       
-        System.out.print("削除したいTaskの番号を入力してください：　");
         int taskSerchCheack = this.taskMemo.getTask();
 
         if(taskSerchCheack >= 0){
-            Scanner titleChange = new Scanner(System.in);
-            System.out.print("TaskのTitleを入力してください：　");
-            String taskTitleChange = titleChange.nextLine();
 
-            // キーボード入力を受け付ける
-            Scanner mainChange = new Scanner(System.in);
-            System.out.print("TaskのMainを入力してください ：　");
-            String taskMainChange = mainChange.nextLine();
+            String taskTitleChange = KeyBord.inputKeyBordTitle();
+
+            String taskMainChange = KeyBord.inputKeyBordMain();
 
             Task taskChange = new Task(taskTitleChange,taskMainChange);
 
             taskMemo.changeTask(taskSerchCheack,taskChange);
         }
-
-        // } catch (Exception e) {
-        // System.out.println(e.getMessage());
-        // }
     }
 }

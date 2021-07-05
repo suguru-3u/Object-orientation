@@ -67,19 +67,19 @@ public class TaskMemo implements Memo{
 
         int taskNumber;
         try {
-        // キーボード入力を受け付ける
-        Scanner title = new Scanner(System.in);
-        taskNumber = title.nextInt();
-        taskNumber -= 1 ;
-        Task task = this.tasks.get(taskNumber);
-        System.out.println(task.toString());
-        System.out.print("こちらのTaskでお間違い無いでしょうか？ 間違いなければ「y」を入力してください：　");
+            // キーボード入力を受け付ける
+            Scanner title = new Scanner(System.in);
+            taskNumber = title.nextInt();
+            taskNumber -= 1 ;
+            Task task = this.tasks.get(taskNumber);
+            System.out.println(task.toString());
+            System.out.print("こちらのTaskでお間違い無いでしょうか？ 間違いなければ「y」を入力してください：　");
 
-        Scanner taskJuge = new Scanner(System.in);
-        String taskJugeAnwser = taskJuge.nextLine();
+            Scanner taskJuge = new Scanner(System.in);
+            String taskJugeAnwser = taskJuge.nextLine();
 
-        if(taskJugeAnwser.equals("y")){
-            return taskNumber;
+            if(taskJugeAnwser.equals("y")){
+                return taskNumber;
         }else{
             return -1 ;
         }
