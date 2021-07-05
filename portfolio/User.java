@@ -26,9 +26,11 @@ public class User extends Human{
     public void memoContentCreate(){
         System.out.println("登録したいTaskを入力してください");
 
-        String taskTitle = KeyBord.inputKeyBordTitle();
+        System.out.print("TaskのTitleを入力してください：　");
+        String taskTitle = KeyBord.inputKeyBordString();
 
-        String taskMain = KeyBord.inputKeyBordMain();
+        System.out.print("TaskのMainを入力してください ：　");
+        String taskMain = KeyBord.inputKeyBordString();
 
         Task task = new Task(taskTitle,taskMain);
 
@@ -55,9 +57,11 @@ public class User extends Human{
 
         if(taskSerchCheack >= 0){
 
-            String taskTitleChange = KeyBord.inputKeyBordTitle();
+            System.out.print("TaskのTitleを入力してください：　");
+            String taskTitleChange = KeyBord.inputKeyBordString();
 
-            String taskMainChange = KeyBord.inputKeyBordMain();
+            System.out.print("TaskのMainを入力してください ：　");
+            String taskMainChange = KeyBord.inputKeyBordString();
 
             Task taskChange = new Task(taskTitleChange,taskMainChange);
 

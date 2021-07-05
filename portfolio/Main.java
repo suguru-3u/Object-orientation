@@ -11,23 +11,14 @@ public class Main{
     boolean app = true;
     User user = new User();
 
-    // ユーザー情報入力
-    try {
-      // キーボード入力を受け付ける
-      System.out.print("お名前を入力してください:");
-      Scanner name = new Scanner(System.in);
-      String yoursName = name.nextLine();
+    // ユーザー情報入力   
+    System.out.print("お名前を入力してください:");
+    String yoursName = KeyBord.inputKeyBordString();
 
-      user.setName(yoursName);
-      user.setTaskMemo(taskMemo);
+    user.setName(yoursName);
+    user.setTaskMemo(taskMemo);
 
-      System.out.println("こんにちは、" + user.getName() + "さん");
-
-    } catch (InputMismatchException e) {
-
-      System.out.println(e.getMessage());
-
-    }
+    System.out.println("こんにちは、" + user.getName() + "さん");
 
     // Taskメイン機能
     while(app){
@@ -43,18 +34,7 @@ public class Main{
       System.out.print("Taskを入力する場合は「1」、Taskを削除する場合は「２」、Taskを編集する場合は「３」、終了する場合は「５」を入力してください　：");
       System.out.print("");
 
-      Scanner yourselect = null;
-      int yoursTask = 0 ;
-
-      try {
-        // キーボード入力を受け付ける
-        yourselect = new Scanner(System.in);
-        yoursTask = yourselect.nextInt();
-
-      } catch (InputMismatchException e) {
-        System.out.println("入力エラーを検知しました");
-        System.out.println(e.getMessage());
-      }
+      int yoursTask = KeyBord.inputKeyBordInt();
 
       switch(yoursTask){
 

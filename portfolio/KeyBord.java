@@ -3,12 +3,11 @@ import java.util.Scanner;
 public class KeyBord{
 
 
-    public static String inputKeyBordTitle(){
+    public static String inputKeyBordString(){
 
         try {
             // キーボード入力を受け付ける
             Scanner title = new Scanner(System.in);
-            System.out.print("TaskのTitleを入力してください：　");
             String taskTitle = title.nextLine();
 
             return taskTitle;
@@ -24,24 +23,21 @@ public class KeyBord{
         }
     }
 
-    public static String inputKeyBordMain(){
+    public static int inputKeyBordInt(){
 
-        try{
+        Scanner yourselect = null;
+        int yoursTask = 0 ;
+        
+        try {
             // キーボード入力を受け付ける
-            Scanner main = new Scanner(System.in);
-            System.out.print("TaskのMainを入力してください ：　");
-            String taskMain = main.nextLine();
+            yourselect = new Scanner(System.in);
+            yoursTask = yourselect.nextInt();
+            return yoursTask;
 
-            return taskMain;
-
-        }catch (Exception e) {
-
+        } catch (InputMismatchException e) {
+            System.out.println("入力エラーを検知しました");
             System.out.println(e.getMessage());
-
-            String errorMessage = "エラーが発生しました";
-
-            return errorMessage;
-
+            return yoursTask;
         }
 
     }
