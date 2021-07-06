@@ -21,7 +21,7 @@ public class Main{
       con = DriverManager.getConnection(
         "jdbc:mysql://localhost/java_app",
         "root",
-        "13579515Ss"
+        ""
       );// "password"の部分は，各自の環境に合わせて変更してください。
 
       pstmt = con.prepareStatement("select * from users");
