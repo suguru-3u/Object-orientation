@@ -14,7 +14,13 @@ public class User extends Human{
     private TaskMemo taskMemo;
 
     // コンストラクタ
-    public User(){
+    public User(String name ,String email,String password,TaskMemo taskMemo){
+        super.setName(name);
+        super.setEmail(email);
+        super.setPassword(password);
+        super.setAdminflg(false);
+        super.setDeleteflg(false);
+        this.taskMemo = taskMemo;
     } 
 
     // TaskMemoをインスタンス変数に格納
@@ -24,7 +30,7 @@ public class User extends Human{
 
     // ユーザーがTaskを登録するメソッド
     public void memoContentCreate(){
-        System.out.println("登録したいTaskを入力してください");
+        System.out.println("\n登録したいTaskを入力してください");
 
         System.out.print("TaskのTitleを入力してください：　");
         String taskTitle = KeyBord.inputKeyBordString();
@@ -34,6 +40,8 @@ public class User extends Human{
 
         Task task = new Task(taskTitle,taskMain);
 
+        System.out.println(task);
+
         this.taskMemo.setTasks(task);
         
     }
@@ -41,7 +49,7 @@ public class User extends Human{
     // ユーザーが登録したTaskを削除するメソッド
     public void memoContentDelete(){
 
-        System.out.print("削除したいTaskの番号を入力してください：　");
+        System.out.print("\n削除したいTaskの番号を入力してください：　");
         int taskSerchCheack = this.taskMemo.getTask();
 
         if(taskSerchCheack >= 0){
@@ -52,7 +60,7 @@ public class User extends Human{
     // ユーザーが登録したTaskの内容を変更するメソッド
     public void memoContentEdit(){
         
-        System.out.print("編集したいTaskの番号を入力してください：　");
+        System.out.print("\n編集したいTaskの番号を入力してください：　");
         int taskSerchCheack = this.taskMemo.getTask();
 
         if(taskSerchCheack >= 0){

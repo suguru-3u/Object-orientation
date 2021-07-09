@@ -3,10 +3,12 @@
 */
 
 abstract class Human{
-    private String name;
 
-    public Human(){
-    }
+    private String name;
+    private String email;
+    private String password;
+    private boolean adminflg;
+    private boolean deleteflg;
 
     // TaskMemoクラスにTaskインスタンスを生成
     abstract public void memoContentCreate();
@@ -27,6 +29,40 @@ abstract class Human{
         return this.name;
     }
 
+     public void setEmail(String email){
+        this.email = email;
+    }
 
+    // 名前をインスタンス変数から取得
+    public String getEmail(){
+        return this.email;
+    }
+
+     public void setPassword(String password){
+        this.password = password;
+    }
+
+    // 名前をインスタンス変数から取得
+    public String getPassword(){
+        return this.password;
+    }
+
+     public void setAdminflg(boolean adminflg){
+        this.adminflg = adminflg;
+    }
+
+    // 名前をインスタンス変数から取得
+    public boolean getAdminflg(){
+        return this.adminflg;
+    }
+
+     public void setDeleteflg(boolean deleteflg){
+        this.deleteflg = deleteflg;
+    }
+
+    // 名前をインスタンス変数から取得
+    public boolean getDeleteflg(){
+        return this.deleteflg;
+    }
 
 }

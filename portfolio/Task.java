@@ -53,7 +53,7 @@ public class Task{
             String finshTask = "このTaskは終了しています..  タイトル：　" + this.title + "詳細:　" + this.main;
             return finshTask;
         }else{
-            String noFinishTask = "タイトル：　" + this.title + "詳細:　" + this.main;
+            String noFinishTask = "タイトル：　" + this.title + " 詳細:　" + this.main;
             return noFinishTask;
         }
          

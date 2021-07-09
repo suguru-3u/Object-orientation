@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.InputMismatchException;
+
 
 public class KeyBord{
 
@@ -28,17 +30,17 @@ public class KeyBord{
         Scanner yourselect = null;
         int yoursTask = 0 ;
 
-        // try {
+        try {
             // キーボード入力を受け付ける
             yourselect = new Scanner(System.in);
             yoursTask = yourselect.nextInt();
             return yoursTask;
 
-        // } catch (InputMismatchException e) {
-        //     System.out.println("入力エラーを検知しました");
-        //     System.out.println(e.getMessage());
-        //     return yoursTask;
-        // }
+        } catch (InputMismatchException e) {
+            System.out.println("入力エラーを検知しました");
+            System.out.println(e.getMessage());
+            return yoursTask;
+        }
 
     }
 }
