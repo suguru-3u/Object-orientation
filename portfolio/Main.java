@@ -13,24 +13,22 @@ public class Main{
     boolean app = true;
 
     // ユーザー情報入力
-    System.out.print("\nお名前を入力してください  :");
-    String yoursName = KeyBord.inputKeyBordString();
-    System.out.print("emailを入力してください   :");
-    String yoursEmail = KeyBord.inputKeyBordString();
-    System.out.print("Passwordを入力してください:");
-    String yoursPassword = KeyBord.inputKeyBordString();
-
-    User user = new User(yoursName,yoursEmail,yoursPassword,taskMemo);
+    User user = new User();
     
     System.out.println("\nようこそ、JavaTodoAooへ" + user.getName() + "さん");
 
     // Taskメイン機能
     while(app){
 
-      System.out.println("\n■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-      System.out.println("■　抱えているTask一覧　　　■");
-      System.out.println("■　Task数 ： " + taskMemo.getTasksNumbers() + "個 　　 　　 ■");
-      System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+
+
+      System.out.println("\n■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+      System.out.println("    User情報　　　");
+      System.out.println("    name   : " + user.getName() );
+      System.out.println("    email  : " + user.getEmail() );
+      System.out.println("\n    Task情報　　　");
+      System.out.println("    Task数 ： " + taskMemo.getTasksNumbers() + "個");
+      System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 
       taskMemo.tasksShow();
 
