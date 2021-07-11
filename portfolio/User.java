@@ -27,6 +27,8 @@ public class User extends Human{
         super.setAdminflg(false);
         super.setDeleteflg(false);
         this.taskMemo = taskMemo;
+
+        System.out.println("\nようこそ、JavaTodoAooへ" + this.getName() + "さん");
     } 
 
     // TaskMemoをインスタンス変数に格納
